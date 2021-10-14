@@ -31,7 +31,11 @@
         },
         "title": "International Outlook Score"
       },
-      "color": {"value": "#1868b3"}
+      "color": {"value": "#1868b3"},
+      "tooltip":[
+      {"field":"title", "type": "ordinal", "title": "University"},
+      {"field": "intl outlook score", "title": "International Outlook Score"}
+      ]
     }
   }
   
