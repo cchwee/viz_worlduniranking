@@ -31,7 +31,11 @@
         },
         "title": "Research Score"
       },
-      "color": {"value": "#b31e8c"}
-    }
+      "color": {"value": "#b31e8c"},
+      "tooltip":[
+        {"field":"title", "type": "ordinal", "title": "University"},
+        {"field": "research score", "title": "Research Score"}
+        ]
+      }
   }
   
