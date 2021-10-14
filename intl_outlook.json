@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 400,
+    "height": 200,
+    "title": "Top 10 Universities Ranked by International Outlook Scores",
+    "data": {"url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/universities_scores.csv"},
+    "transform": [
+      {
+        "window": [{
+            "op": "rank",
+            "as": "rank"
+          }],
+          "sort":[{"field": "intl outlook score","order": "descending"}]
+      }, {
+        "filter": "datum.rank <= 10"
+      }
+    ],
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "title",
+        "type": "ordinal",
+        "sort": "-x",
+        "title": "Top 10 Best International Outlook Scores"
+      },
+      "x": {
+        "aggregate": "sum",
+        "field": "intl outlook score",
+        "scale": {
+          "domain": [80, 100]
+        },
+        "title": "International Outlook Score"
+      },
+      "color": {"value": "#1868b3"}
+    }
+  }
+  

@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 400,
     "height": 200,
-    "title": "Top 10 Universities Ranked by Teaching Scores",
+    "title": "Top 10 Universities Ranked by Research Scores",
     "data": {"url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/universities_scores.csv"},
     "transform": [
       {
@@ -10,7 +10,7 @@
             "op": "rank",
             "as": "rank"
           }],
-          "sort":[{"field": "teaching score","order": "descending"}]
+          "sort":[{"field": "research score","order": "descending"}]
       }, {
         "filter": "datum.rank <= 10"
       }
@@ -21,14 +21,17 @@
         "field": "title",
         "type": "ordinal",
         "sort": "-x",
-        "title": "Top 10 Best Teaching Scores"
+        "title": "Top 10 Best Research Scores"
       },
       "x": {
         "aggregate": "sum",
         "field": "overall score",
-        "title": "Teaching Score"
+        "scale": {
+          "domain": [80, 100]
+        },
+        "title": "Research Score"
       },
-      "color": {"field": "title", "legend": null}
+      "color": {"value": "#b31e8c"}
     }
   }
   
