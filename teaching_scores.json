@@ -31,6 +31,10 @@
       },
       "title": "Teaching Score"
     },
-    "color": {"value": "#ed1b36"}
+    "color": {"value": "#ed1b36"},
+    "tooltip":[
+    {"field":"title", "type": "ordinal", "title": "University"},
+    {"field": "teaching score", "title": "Teaching Score"}
+    ]
   }
 }
