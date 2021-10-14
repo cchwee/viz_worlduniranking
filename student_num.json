@@ -1,0 +1,50 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Number of Universities in World Countries",
+    "width": 800,
+    "height": 500,
+    "data": {
+      "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+      "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+    },
+    "projection": {"type": "equalEarth"},
+    "layer":[
+      {
+        "transform": [
+          {"calculate": "'Data is not available in ' + datum.properties.NAME", "as": "note"}
+        ],
+        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+        "encoding": {
+          "tooltip": {
+            "field": "note"
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "lookup": "properties.NAME",
+            "from": {
+              "data": {
+                "url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/edited_uni_data.csv"
+              },
+              "key": "location",
+              "fields": ["number students"]
+            }
+          }
+        ],
+        "mark": {"type": "geoshape", "stroke": "white"},
+        "encoding": {
+          "color": {
+            "field": "number students",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {"field": "properties.NAME", "type": "nominal", "title": "Location"},
+            {"field": "number students", "type": "quantitative", "title": "Total students"}
+          ]
+        }
+      }
+    ]
+    
+  }
