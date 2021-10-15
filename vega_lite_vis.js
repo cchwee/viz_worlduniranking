@@ -32,7 +32,7 @@ vegaEmbed("#radar_chart", vg_4).then(function(result) {
 
 var vg_5 = "unirank_overall.json";
 
-vegaEmbed("#unirank_overall_chart", vg_5.then(function(result) {
+vegaEmbed("#unirank_overall_chart", vg_5).then(function(result) {
 
  // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 
@@ -40,7 +40,7 @@ vegaEmbed("#unirank_overall_chart", vg_5.then(function(result) {
 
 var vg_6 = "student_num.json";
 
-vegaEmbed("#student_num_map", vg_6.then(function(result) {
+vegaEmbed("#student_num_map", vg_6).then(function(result) {
 
  // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 
