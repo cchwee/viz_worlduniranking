@@ -1,0 +1,85 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Number of Universities in World Countries",
+    "width": 700,
+    "height": 400,
+    "data": {
+        "url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/edited_uni_data.csv"
+      },
+    "projection": {"type": "equalEarth"},
+    "layer": [
+      {
+  
+        "data": {
+            "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/2_symbol_map/js/ne_110m_admin_0_countries.topojson",
+            "format": {
+                "type": "topojson",
+                "feature": "ne_110m_admin_0_countries"
+            }
+        },
+        "transform": [{
+            "calculate": "'University data is not available in ' + datum.properties.NAME_LONG",
+            "as": "note"
+        }],
+        "mark": {
+          "type": "geoshape",
+          "fill": "#f3eded",
+          "stroke": "white",
+          "strokeWidth": 1
+        },
+        "encoding": { 
+          "tooltip": { "field": "note" } 
+          }
+      },
+      {
+        "transform": [
+          {
+            "aggregate": [
+              {
+              "op": "count",
+              "field": "title",
+              "as": "count_uni"
+              }
+            ],
+            "groupby": ["location"]
+          },
+          {
+            "lookup": "location",
+            "from": {
+              "data": {
+                "url":"https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+                "format": {
+                  "type": "topojson",
+                  "feature": "ne_110m_admin_0_countries"
+                }
+              },
+              "key": "properties.NAME_LONG"
+            },
+            "as": "geo"
+          }
+        ],
+        "mark": {
+          "type": "geoshape",
+          "stroke":"#8c8992",
+          "strokeWidth": 0.5
+        },
+        "encoding": {
+          "shape": { "field": "geo", "type": "geojson" },
+          "color": {
+            "field": "count_uni",
+            "type": "quantitative",
+            "scale": {
+              "scheme": "tealblues"
+            },
+            "legend": {
+              "title": "Number of Universities"
+            }
+          },
+          "tooltip": [
+              {"field": "location", "type": "nominal", "title": "Location"},
+              {"field": "count_uni", "type": "quantitative", "title": "Total Number of Universities"}
+          ]
+        }
+      }
+    ]
+  }
