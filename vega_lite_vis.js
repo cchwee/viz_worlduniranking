@@ -48,7 +48,7 @@ vegaEmbed("#student_num_map", vg_6).then(function(result) {
 
 var vg_7 = "uni_num.json";
 
-vegaEmbed("#uni_num_map", vg_6).then(function(result) {
+vegaEmbed("#uni_num_map", vg_7).then(function(result) {
 
  // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 
