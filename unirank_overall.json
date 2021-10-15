@@ -1,58 +1,53 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
-    "height": 500,
-    "title": "University Rankings vs Overall Score",
-    "data": {
-      "url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/universities_scores.csv"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 400,
+  "title": "University Rankings vs Overall Score",
+  "data": {
+    "url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/universities_scores.csv"
+  },
+  "transform": [{"filter": "datum.ranking <=100"}],
+  "encoding": {
+    "x": {
+      "field": "ranking",
+      "type": "quantitative",
+      "title": "University World Rankings 2021",
+      "scale": {"domain": [0, 100]}
     },
-    "transform": [
-      {"filter": "datum.ranking <=100"}
-    ],
-    "encoding": {
-      "x": {
-        "field": "ranking",
-        "type": "quantitative",
-        "title": "University World Rankings 2021",
-        "scale": {
-          "domain": [0,100]
+    "y": {
+      "field": "overall score",
+      "type": "quantitative",
+      "title": "Overall Scores",
+      "scale": {"domain": [60, 100]}
+    },
+    "color": {"field": "location", "type": "nominal"}
+  },
+  "layer": [
+    {
+      "selection": {
+        "location_highlight": {
+          "type": "multi",
+          "fields": ["location"],
+          "bind": "legend"
         }
       },
-      "y": {
-        "field": "overall score",
-        "type": "quantitative",
-        "title": "Overall Scores",
-        "scale": {
-          "domain": [50, 100]
-        }
-      },
-    "color": {
-        "field": "location",
-        "type": "nominal"
-      }
-    },
-    "layer": [
-      {
-        "selection": {
-          "location_highlight": {
-            "type": "multi",
-            "fields":["location"],
-            "bind": "legend"
-          }
+      "mark": "point",
+      "encoding": {
+        "opacity": {
+          "condition": {"selection": "location_highlight", "value": 0.8},
+          "value": 0.1
         },
-        "mark": "point",
-        "encoding":{
-          "opacity": {
-              "condition": {"selection": "location_highlight", "value": 0.8},
-              "value": 0.1
-              },
-          "tooltip":[
-                {"field":"title", "title": "University Name", "type": "nominal"},
-                {"field":"location", "type": "nominal", "title": "Location"},
-                {"field":"overall score", "type": "quantitative", "title":"Overall Score"},
-                {"field":"ranking", "type": "ordinal", "title":"ranking"}
-              ]
-        }
+        "tooltip": [
+          {"field": "title", "title": "University Name", "type": "nominal"},
+          {"field": "location", "type": "nominal", "title": "Location"},
+          {
+            "field": "overall score",
+            "type": "quantitative",
+            "title": "Overall Score"
+          },
+          {"field": "ranking", "type": "ordinal", "title": "ranking"}
+        ]
       }
-    ]
-  }
+    }
+  ]
+}
