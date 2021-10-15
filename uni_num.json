@@ -69,7 +69,7 @@
             "field": "count_uni",
             "type": "quantitative",
             "scale": {
-              "scheme": "tealblues"
+              "scheme": "blues"
             },
             "legend": {
               "title": "Number of Universities"

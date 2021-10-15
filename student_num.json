@@ -66,6 +66,9 @@
         "color": {
           "field": "sum_students",
           "type": "quantitative",
+          "scale":{
+            "scheme": "tealblues"
+          },
           "legend": {
             "title": "Number of Students"
           }
