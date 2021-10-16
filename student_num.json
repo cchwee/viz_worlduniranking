@@ -6,6 +6,41 @@
   "data": {
       "url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/edited_uni_data.csv"
     },
+    "params":[
+      {
+      "name": "Continent_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "labels":[
+          "Show All",
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "name": "Continent Selection: "
+      }
+      }
+    ],
+    "transform": [{"filter": "Continent_selection == null || datum.continent == Continent_selection"}],
+    "selection": {
+      "continent_highlight": {
+        "type": "multi",
+        "fields": ["continent"],
+        "bind": "legend"
+      }
+    },
   "projection": {"type": "equalEarth"},
   "layer": [
     {
@@ -74,8 +109,8 @@
           }
         },
         "tooltip": [
-            {"field": "location", "type": "nominal", "title": "Location"},
-            {"field": "sum_students", "type": "quantitative", "title": "Total students"}
+          {"field": "location", "type": "nominal", "title": "Location"},
+          {"field": "sum_students", "type": "quantitative", "title": "Total students"}
         ]
       }
     }
