@@ -38,17 +38,9 @@ vegaEmbed("#unirank_overall_chart", vg_5).then(function(result) {
 
 }).catch(console.error);
 
-var vg_6 = "student_num.json";
+var vg_6 = "uni_stud_num.json";
 
-vegaEmbed("#student_num_map", vg_6).then(function(result) {
-
- // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-
-}).catch(console.error);
-
-var vg_7 = "uni_num.json";
-
-vegaEmbed("#uni_num_map", vg_7).then(function(result) {
+vegaEmbed("#uni_stud_num_map", vg_6).then(function(result) {
 
  // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 
