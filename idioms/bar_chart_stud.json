@@ -1,116 +1,116 @@
 {
-    "schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "params":[
-      {
-        "name": "Continent_selection",
-        "bind": {
-          "input": "select",
-          "options": [
-            null,
-            "North America",
-            "South America",
-            "Europe",
-            "Africa",
-            "Asia",
-            "Oceania"
-          ],
-          "labels":[
-            "Show All",
-            "North America",
-            "South America",
-            "Europe",
-            "Africa",
-            "Asia",
-            "Oceania"
-          ],
-          "name": "Continent Selection: "
-        }
+  "schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "params":[
+    {
+      "name": "Continent_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "labels":[
+          "Show All",
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "name": "Continent Selection: "
       }
-    ],
-    "hconcat": [
-      {
-        "title": "Number of Universities in Each Continent",
-        "width": 300,
-        "height": 200,
-        "data": {"url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/data/edited_uni_data.csv"},
-        "transform": [
-          {
-            "aggregate": [
-              {
-              "op": "count",
-              "field": "title",
-              "as": "count_uni"
-              }
-            ],
-            "groupby": ["continent"]
-          },
-          {"filter": "Continent_selection == null || datum.continent == Continent_selection"}
-        ],
-        "selection": {
-            "continent_highlight": {
-              "type": "multi",
-              "fields": ["continent"],
-              "bind": "legend"
+    }
+  ],
+  "hconcat": [
+    {
+      "title": "Number of Universities in Each Continent",
+      "width": 300,
+      "height": 200,
+      "data": {"url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/data/edited_uni_data.csv"},
+      "transform": [
+        {
+          "aggregate": [
+            {
+            "op": "count",
+            "field": "title",
+            "as": "count_uni"
             }
-          },
-        "mark": "bar",
-        "encoding": {
-          "x": {"field": "continent", "type": "nominal", "sort": ["Asia", "Europe", "North America", "South America", "Africa", "Oceania"]},
-          "color": {"field": "continent", "type": "nominal", "legend": null},
-          "y": {
-            "field": "count_uni",
-            "type": "quantitative",
-            "title": "Total Number of Universities"
-          },
-          "tooltip": [
-            {"field": "continent", "title": "Continent"},
-            {"field": "count_uni", "title": "Total Number of Universities"}
-          ]
-        }
-      },
-      {
-        "title": "Number of Students in Each Continent",
-        "width": 300,
-        "height": 200,
-        "data": {"url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/data/edited_uni_data.csv"},
-        "transform": [
-          {
-            "aggregate": [
-              {
-              "op": "sum",
-              "field": "number students",
-              "as": "sum_students"
-              }
-            ],
-            "groupby": ["continent"]
-          },
-          {"filter": "Continent_selection == null || datum.continent == Continent_selection"}
-        ],
-        "selection": {
-            "continent_highlight": {
-              "type": "multi",
-              "fields": ["continent"],
-              "bind": "legend"
-            }
+          ],
+          "groupby": ["continent"]
         },
-        "layer": [
-          {
-            "mark": "bar",
-            "encoding": {
-              "x": {"field": "continent", "type": "nominal", "sort": ["Asia", "Europe", "North America", "Africa", "South America", "Oceania"]},
-              "color": {"field": "continent", "type": "nominal"},
-              "y": {
-                "field": "sum_students",
-                "type": "quantitative",
-                "title": "Total Number of Students"
-              },
-              "tooltip": [
-                {"field": "continent", "title": "Continent"},
-                {"field": "sum_students", "title": "Total Number of Students"}
-              ]
-            }
+        {"filter": "Continent_selection == null || datum.continent == Continent_selection"}
+      ],
+      "selection": {
+          "continent_highlight": {
+            "type": "multi",
+            "fields": ["continent"],
+            "bind": "legend"
           }
+        },
+      "mark": "bar",
+      "encoding": {
+        "x": {"field": "continent", "type": "nominal", "sort": ["Asia", "Europe", "North America", "South America", "Africa", "Oceania"]},
+        "color": {"field": "continent", "type": "nominal"},
+        "y": {
+          "field": "count_uni",
+          "type": "quantitative",
+          "title": "Total Number of Universities"
+        },
+        "tooltip": [
+          {"field": "continent", "title": "Continent"},
+          {"field": "count_uni", "title": "Total Number of Universities"}
         ]
       }
-    ]
-  }
+    },
+    {
+      "title": "Number of Students in Each Continent",
+      "width": 300,
+      "height": 200,
+      "data": {"url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/data/edited_uni_data.csv"},
+      "transform": [
+        {
+          "aggregate": [
+            {
+            "op": "sum",
+            "field": "number students",
+            "as": "sum_students"
+            }
+          ],
+          "groupby": ["continent"]
+        },
+        {"filter": "Continent_selection == null || datum.continent == Continent_selection"}
+      ],
+      "selection": {
+          "continent_highlight": {
+            "type": "multi",
+            "fields": ["continent"],
+            "bind": "legend"
+          }
+      },
+      "layer": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {"field": "continent", "type": "nominal", "sort": ["Asia", "Europe", "North America", "Africa", "South America", "Oceania"]},
+            "color": {"field": "continent", "type": "nominal"},
+            "y": {
+              "field": "sum_students",
+              "type": "quantitative",
+              "title": "Total Number of Students"
+            },
+            "tooltip": [
+              {"field": "continent", "title": "Continent"},
+              {"field": "sum_students", "title": "Total Number of Students"}
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
