@@ -10,18 +10,6 @@ body {
     padding-top: 30px;
 }
 
-.t {
-    color: rgb(255, 0, 0);
-}
-
-.h {
-    color: rgb(234, 0, 255);
-}
-
-.e {
-    color: rgb(68, 0, 255);
-}
-
 h1 {
     font-family: 'Gidugu';
     font-size: 60px;
@@ -76,5 +64,5 @@ h1 {
 }
 
 .small-font {
-    font-size: 14px;
+    font-size: 10px;
 }
