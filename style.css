@@ -17,6 +17,9 @@ h1 {
     text-align: center;
 }
 
+.pure-g {
+    margin-bottom: 25px;
+}
 
 p {
     font-family: 'Tenor Sans';
