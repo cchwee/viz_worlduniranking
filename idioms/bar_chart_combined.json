@@ -1,0 +1,115 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/data/universities_scores.csv"},
+    "hconcat": [
+      {
+        "transform": [
+      {
+          "window": [{
+              "op": "rank",
+              "as": "rank"
+            }],
+            "sort":[{"field": "teaching score","order": "descending"}]
+        }, {
+          "filter": "datum.rank <= 10"
+        }
+      ],
+        "title": "Top 10 Uni Ranked by Teaching Scores",
+        "mark": "bar",
+        "encoding": {
+          "y": {
+            "field": "title",
+            "type": "ordinal",
+            "sort": "-x",
+            "title": "Top 10 Best Teaching Scores"
+          },
+          "x": {
+            "aggregate": "sum",
+            "field": "overall score",
+            "scale": {
+              "domain": [80,100]
+            },
+            "title": "Teaching Score"
+          },
+          "color": {"value": "#ed1b36"},
+          "tooltip":[
+          {"field":"title", "type": "ordinal", "title": "University"},
+          {"field": "teaching score", "title": "Teaching Score"}
+          ]
+        }
+      },
+      {
+        "transform": [
+      {
+          "window": [{
+              "op": "rank",
+              "as": "rank"
+            }],
+            "sort":[{"field": "research score","order": "descending"}]
+        }, {
+          "filter": "datum.rank <= 10"
+        }
+      ],
+        "title": "Top 10 Uni Ranked by Research Scores",
+        "mark": "bar",
+        "encoding": {
+          "y": {
+            "field": "title",
+            "type": "ordinal",
+            "sort": "-x",
+            "title": "Top 10 Best Research Scores"
+          },
+        "x": {
+          "aggregate": "sum",
+          "field": "research score",
+          "scale": {
+            "domain": [80, 100]
+          },
+          "title": "Research Score"
+        },
+        "color": {"value": "#b31e8c"},
+        "tooltip":[
+          {"field":"title", "type": "ordinal", "title": "University"},
+          {"field": "research score", "title": "Research Score"}
+          ]
+        }
+      },
+      {
+        "transform": [
+      {
+          "window": [{
+              "op": "rank",
+              "as": "rank"
+            }],
+            "sort":[{"field": "industry income score","order": "descending"}]
+        }, {
+          "filter": "datum.rank <= 10"
+        }
+      ],
+        "title": "Top 10 Uni Ranked by Industry Income Scores",
+        "mark": "bar",
+        "encoding": {
+          "y": {
+            "field": "title",
+            "type": "ordinal",
+            "sort": "-x",
+            "title": "Top 10 Best Industry Income Scores"
+          },
+          "x": {
+            "aggregate": "sum",
+            "field": "industry income score",
+            "scale": {
+              "domain": [80, 100]
+            },
+            "title": "Industry Income Score"
+          },
+        "color": {"value": "#1868b3"},
+        "tooltip":[
+            {"field":"title", "type": "ordinal", "title": "University"},
+            {"field": "industry income score", "title": "Industry Income Score"}
+        ]
+        }
+      }
+    ]
+  }
+  
