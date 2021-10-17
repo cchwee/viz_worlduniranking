@@ -10,25 +10,16 @@ body {
     padding-top: 30px;
 }
 
-#t {
-    font-family: 'Gidugu';
-    font-size: 60px;
+.t {
     color: rgb(255, 0, 0);
-    text-align: center;
 }
 
-#h {
-    font-family: 'Gidugu';
-    font-size: 60px;
+.h {
     color: rgb(234, 0, 255);
-    text-align: center;
 }
 
-#e {
-    font-family: 'Gidugu';
-    font-size: 60px;
+.e {
     color: rgb(68, 0, 255);
-    text-align: center;
 }
 
 h1 {
