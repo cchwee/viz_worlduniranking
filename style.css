@@ -1,5 +1,4 @@
 body {
-    padding: 50px;
     background-color: rgb(226, 226, 226);
 }
 
@@ -21,7 +20,7 @@ h1 {
 
 p {
     font-family: 'Tenor Sans';
-    font-size: 15px;
+    font-size: 20px;
     color: black;
     text-align: left;
 }
