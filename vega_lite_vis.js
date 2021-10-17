@@ -53,6 +53,14 @@ vegaEmbed("#bar_chart_stud", vg_7).then(function(result) {
  // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 
 }).catch(console.error);
+ 
+var vg_8 = "top_5_country.json";
+
+vegaEmbed("#top_5_country", vg_8).then(function(result) {
+
+ // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+
+}).catch(console.error);
 
 
 
