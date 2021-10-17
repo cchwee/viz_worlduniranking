@@ -16,7 +16,7 @@
     ],
       "title": "Top 10 Uni vs Teaching Scores",
       "height": 200,
-      "width": 200,
+      "width": 250,
       "mark": "bar",
       "encoding": {
         "y": {
@@ -54,7 +54,7 @@
     ],
       "title": "Top 10 Uni vs Research Scores",
       "height": 200,
-      "width": 200,
+      "width": 250,
       "mark": "bar",
       "encoding": {
         "y": {
@@ -92,7 +92,7 @@
     ],
       "title": "Top 10 Uni vs Industry Income Scores",
       "height": 200,
-      "width": 200,
+      "width": 250,
       "mark": "bar",
       "encoding": {
         "y": {
