@@ -54,7 +54,7 @@ vegaEmbed("#bar_chart_stud", vg_7).then(function(result) {
 
 }).catch(console.error);
  
-var vg_8 = "idioims/top_5_country.json";
+var vg_8 = "idioms/top_5_country.json";
 
 vegaEmbed("#top_5_country", vg_8).then(function(result) {
 
