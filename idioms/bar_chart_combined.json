@@ -15,8 +15,8 @@
       }
     ],
       "title": "Top 10 Uni vs Teaching Scores",
-      "height": 200,
-      "width": 250,
+      "height": 300,
+      "width": 400,
       "mark": "bar",
       "encoding": {
         "y": {
@@ -53,8 +53,8 @@
       }
     ],
       "title": "Top 10 Uni vs Research Scores",
-      "height": 200,
-      "width": 250,
+      "height": 300,
+      "width": 400,
       "mark": "bar",
       "encoding": {
         "y": {
