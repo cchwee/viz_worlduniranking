@@ -69,3 +69,13 @@ h1 {
     font-size: 10px;
     text-align: center;
 }
+
+div.left {
+    float: left;
+    width: 50%;
+}
+
+div.right {
+    float: right;
+    width: 50%;
+}
