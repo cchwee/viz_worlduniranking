@@ -31,8 +31,8 @@
   "hconcat": [
     {
         "title": "Number of Students in World Countries",
-        "width": 400,
-        "height": 300,
+        "width": 200,
+        "height": 100,
         "data": {
             "url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/data/edited_uni_data.csv"
           },
@@ -121,8 +121,8 @@
     },
     {
         "title": "Number of Universities in World Countries",
-        "width": 400,
-        "height": 300,
+        "width": 200,
+        "height": 100,
         "data": {
             "url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/data/edited_uni_data.csv"
           },
