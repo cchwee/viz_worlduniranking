@@ -28,9 +28,16 @@ p {
     text-align: left;
 }
 
-p1 {
+#subtext {
     font-family: 'Tenor Sans';
     font-size: 15px;
+    color: black;
+    text-align: left;
+}
+
+#guide {
+    font-family: 'Tenor Sans';
+    font-size: 8px;
     color: black;
     text-align: left;
 }
