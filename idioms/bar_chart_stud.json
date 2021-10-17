@@ -30,7 +30,7 @@
     "hconcat": [
       {
         "title": "Number of Universities in Each Continent",
-        "width": 200,
+        "width": 300,
         "height": 200,
         "data": {"url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/data/edited_uni_data.csv"},
         "transform": [
@@ -70,7 +70,7 @@
       },
       {
         "title": "Number of Students in Each Continent",
-        "width": 200,
+        "width": 300,
         "height": 200,
         "data": {"url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/data/edited_uni_data.csv"},
         "transform": [
