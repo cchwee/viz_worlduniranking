@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Number of Students in World Countries",
-    "width": 200,
+    "width": 400,
     "height": 300,
     "params":[
       {
