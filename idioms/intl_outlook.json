@@ -3,7 +3,7 @@
     "width": 400,
     "height": 200,
     "title": "Top 10 Universities Ranked by International Outlook Scores",
-    "data": {"url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/universities_scores.csv"},
+    "data": {"url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/data/universities_scores.csv"},
     "transform": [
       {
         "window": [{

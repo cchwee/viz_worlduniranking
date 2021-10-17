@@ -32,7 +32,7 @@
         "title": "Number of Universities in Each Continent",
         "width": 200,
         "height": 200,
-        "data": {"url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/edited_uni_data.csv"},
+        "data": {"url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/data/edited_uni_data.csv"},
         "transform": [
           {
             "aggregate": [
@@ -72,7 +72,7 @@
         "title": "Number of Students in Each Continent",
         "width": 200,
         "height": 200,
-        "data": {"url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/edited_uni_data.csv"},
+        "data": {"url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/data/edited_uni_data.csv"},
         "transform": [
           {
             "aggregate": [

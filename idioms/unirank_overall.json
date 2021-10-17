@@ -4,7 +4,7 @@
   "height": 400,
   "title": "University Rankings vs Overall Score",
   "data": {
-    "url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/universities_scores.csv"
+    "url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/data/universities_scores.csv"
   },
   "transform": [{"filter": "datum.ranking <=100"}],
   "encoding": {

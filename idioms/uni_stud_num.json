@@ -34,7 +34,7 @@
         "width": 500,
         "height": 400,
         "data": {
-            "url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/edited_uni_data.csv"
+            "url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/data/edited_uni_data.csv"
           },
         "transform": [{"filter": "Continent_selection == null || datum.continent == Continent_selection"}],
         "selection": {
@@ -124,7 +124,7 @@
         "width": 500,
         "height": 400,
         "data": {
-            "url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/edited_uni_data.csv"
+            "url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/data/edited_uni_data.csv"
           },
         "transform": [{"filter": "Continent_selection == null || datum.continent == Continent_selection"}],
         "selection": {
