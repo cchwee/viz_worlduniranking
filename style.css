@@ -28,6 +28,13 @@ p {
     text-align: left;
 }
 
+p1 {
+    font-family: 'Tenor Sans';
+    font-size: 15px;
+    color: black;
+    text-align: left;
+}
+
 .vis-container {
     width: 100%;
 }
