@@ -1,0 +1,119 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Number of Students in World Countries",
+    "width": 400,
+    "height": 300,
+    "params":[
+      {
+        "name": "Continent_selection",
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "North America",
+            "South America",
+            "Europe",
+            "Africa",
+            "Asia",
+            "Oceania"
+          ],
+          "labels":[
+            "Show All",
+            "North America",
+            "South America",
+            "Europe",
+            "Africa",
+            "Asia",
+            "Oceania"
+          ],
+          "name": "Continent Selection: "
+        }
+      }
+    ],      
+    "data": {
+        "url": "https://raw.githubusercontent.com/cchwee/viz_worlduniranking/main/data/edited_uni_data.csv"
+      },
+    "transform": [{"filter": "Continent_selection == null || datum.continent == Continent_selection"}],
+    "selection": {
+      "continent_highlight": {
+        "type": "multi",
+        "fields": ["continent"],
+        "bind": "legend"
+      }
+    },
+  "projection": {"type": "equalEarth"},
+  "layer": [
+    {
+  
+      "data": {
+          "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/2_symbol_map/js/ne_110m_admin_0_countries.topojson",
+          "format": {
+              "type": "topojson",
+              "feature": "ne_110m_admin_0_countries"
+          }
+      },
+      "transform": [{
+          "calculate": "'Student data is not available in ' + datum.properties.NAME_LONG",
+          "as": "note"
+      }],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f3eded",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": { "tooltip": { "field": "note" } }
+    },
+    {
+      "transform": [
+        {
+          "aggregate": [
+            {
+            "op": "sum",
+            "field": "number students",
+            "as": "sum_stud"
+            }
+          ],
+          "groupby": ["location"]
+        },
+        {
+          "lookup": "location",
+          "from": {
+            "data": {
+              "url":"https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+              "format": {
+                "type": "topojson",
+                "feature": "ne_110m_admin_0_countries"
+              }
+            },
+            "key": "properties.NAME_LONG"
+          },
+          "as": "geo"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke":"#8c8992",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "shape": { "field": "geo", "type": "geojson" },
+        "color": {
+          "field": "sum_stud",
+          "type": "quantitative",
+          "scale":{
+            "scheme": "purples"
+          },
+          "legend": {
+            "title": "Number of Students"
+          } 
+        },
+        "tooltip": [
+          {"field": "location", "type": "nominal", "title": "Location"},
+          {"field": "sum_stud", "type": "quantitative", "title": "Total Number of Students"}
+        ]
+      }
+    }
+  ]
+  }
+  

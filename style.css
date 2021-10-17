@@ -17,6 +17,13 @@ h1 {
     text-align: center;
 }
 
+h1 {
+    font-family: 'Gidugu';
+    font-size: 45px;
+    color: black;
+    text-align: center;
+}
+
 .pure-g {
     margin-bottom: 25px;
 }
@@ -37,7 +44,7 @@ p {
 
 #guide {
     font-family: 'Tenor Sans';
-    font-size: 10px;
+    font-size: 12px;
     color: rgb(17, 6, 82);
     text-align: left;
 }

@@ -6,6 +6,22 @@ vegaEmbed("#bar_chart_combined", vg_1).then(function(result) {
 
 }).catch(console.error);
 
+var vg_2 = "idioms/uni_count.json";
+
+vegaEmbed("#uni_map", vg_2).then(function(result) {
+
+ // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+
+}).catch(console.error);
+
+var vg_3 = "idioms/student_count.json";
+
+vegaEmbed("#stud_map", vg_3).then(function(result) {
+
+ // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+
+}).catch(console.error);
+
 var vg_4 = "idioms/radar.json";
 
 vegaEmbed("#radar_chart", vg_4).then(function(result) {
@@ -17,14 +33,6 @@ vegaEmbed("#radar_chart", vg_4).then(function(result) {
 var vg_5 = "idioms/unirank_overall.json";
 
 vegaEmbed("#unirank_overall_chart", vg_5).then(function(result) {
-
- // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-
-}).catch(console.error);
-
-var vg_6 = "idioms/uni_stud_num.json";
-
-vegaEmbed("#uni_stud_num_map", vg_6).then(function(result) {
 
  // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 
