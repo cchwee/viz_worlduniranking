@@ -1,18 +1,18 @@
 body {
-    background-color: rgb(100, 100, 100);
+    background-color: rgb(216, 215, 215);
 }
 
 .page {
-    width: 850px;
+    width: 900px;
     background-color: white;
     margin: auto;
     padding: 30px;
-    padding-top: 35px;
+    padding-top: 30px;
 }
 
 h1 {
     font-family: 'Gidugu';
-    font-size: 70px;
+    font-size: 60px;
     color: black;
     text-align: center;
 }
