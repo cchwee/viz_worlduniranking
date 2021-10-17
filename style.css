@@ -1,10 +1,19 @@
 body {
     padding: 50px;
+    background-color: azure;
+}
+
+.page {
+    width: 850px;
+    background-color: white;
+    margin: auto;
+    padding: 50px;
+    padding-top: 35px;
 }
 
 h1 {
     font-family: 'Gidugu';
-    font-size: 50px;
+    font-size: 70px;
     color: black;
     text-align: center;
 }
