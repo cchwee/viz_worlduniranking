@@ -98,7 +98,7 @@
             "mark": "bar",
             "encoding": {
               "x": {"field": "continent", "type": "nominal", "sort": ["Asia", "Europe", "North America", "Africa", "South America", "Oceania"]},
-              "color": {"field": "continent", "type": "nominal", "legend": null},
+              "color": {"field": "continent", "type": "nominal"},
               "y": {
                 "field": "sum_students",
                 "type": "quantitative",
